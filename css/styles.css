@@ -1,0 +1,247 @@
+/* Global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+/* Top bar: contiene logout a sinistra e saldo a destra */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    gap: 16px;
+    background: transparent;
+}
+
+/* Wrapper aree per maggiore controllo responsive */
+.left-area,
+.right-area {
+    display: flex;
+    align-items: center;
+}
+
+/* Logout container (posizionato a sinistra nella top-bar) */
+.logout-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bottone Logout blu */
+.logout-btn {
+    padding: 10px 18px;
+    height: 40px;
+    line-height: 1;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.08s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn:hover {
+    background: #3b36b8;
+    transform: translateY(-1px);
+}
+
+/* Contenitore saldo (in alto a destra) */
+header.top-bar .money-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(79,70,229,0.08);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(79,70,229,0.12);
+    min-width: 110px;
+    justify-content: center;
+    height: 40px; /* stessa altezza del bottone logout per allineamento */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Valore numerico */
+header.top-bar .money-container .money-value {
+    font-weight: 700;
+    color: #111827;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* Simbolo valuta a destra */
+header.top-bar .money-container .money-currency {
+    font-weight: 700;
+    color: #4f46e5;
+    font-size: 1rem;
+}
+
+/* Titolo centrale */
+.title-banner {
+    text-align: center;
+    padding: 36px 20px 0;
+}
+
+.title-banner h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #3b34bf;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* Layout dashboard */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+/* Box generici */
+.box {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Titoli box */
+.box h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Tabella */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Intestazione */
+.table thead tr th {
+    background: linear-gradient(90deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* Righe alternate */
+.table tbody tr:nth-child(odd) {
+    background: #f9f9fb;
+    color: #000000;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Hover: scurisce molto e testo bianco */
+.table tbody tr:hover {
+    background: #333333;
+    color: #ffffff;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Celle */
+.table th,
+.table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Colonna colore */
+.color-cell {
+    text-align: center;
+    width: 60px;
+}
+
+.color-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #999;
+}
+
+/* Pulsanti generici */
+.primary-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+}
+
+.primary-btn:hover {
+    background: #333333;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Form inputs (stile coerente) */
+.auth-form input[type="text"],
+.auth-form input[type="color"] {
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Responsive: su schermi piccoli impila top-bar verticalmente */
+@media (max-width: 600px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px;
+    }
+    .left-area,
+    .right-area {
+        justify-content: space-between;
+    }
+    header.top-bar .money-container {
+        margin-left: auto;
+        justify-content: flex-end;
+        min-width: auto;
+        height: auto;
+        padding: 6px 10px;
+    }
+    .title-banner {
+        padding-top: 18px;
+    }
+    .dashboard-container {
+        padding: 20px;
+        gap: 16px;
+    }
+
+}
+
