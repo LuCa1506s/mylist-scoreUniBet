@@ -17,8 +17,8 @@ else if($ret== 2){
     header('Location:prof.php');
 }
 else{
-     echo "<br>".$ret."<br>";
-     echo "login errato";
+    echo "<br>".$ret."<br>";
+    echo "login errato";
     header('Location:login.php');
 }
 ?>

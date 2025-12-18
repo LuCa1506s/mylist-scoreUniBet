@@ -1,5 +1,5 @@
 
-<a href="/mylist/scoreUniBet/public/login.php">Go to login</a><?php
+<a href="../public/login.php">Go to login</a><?php
 require_once __DIR__.'/config.php';
 
 session_start();
@@ -15,11 +15,11 @@ if($ret== 0){
     exit;
 }
 else if($ret == 1){
-    header("/mylist/scoreUniBet/public/login.php");
+    header("../public/login.php");
 }
 else{
-     echo "<br>".$ret."<br>";
-     echo "login errato";
+    echo "<br>".$ret."<br>";
+    echo "login errato";
     header('Location: ../public/login.php');
 }
 
