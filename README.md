@@ -3,6 +3,8 @@
 ScoreUniBet is a web application designed to make exam preparation more engaging and fun.  
 Users can create groups, place bets on exam grades, and admins can close exams with transparent and automatic payout logic.
 
+https://supergestional.altervista.org/scoreUniBet/public/login.php
+
 ---
 
 ## 🚀 Key Features
